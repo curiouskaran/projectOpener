@@ -45,7 +45,6 @@ const run = async () => {
 
     //run the command
     runCommand(answers);
-    console.log('answers',answers['COMMAND_NAME']);
   };
   
   run();
