@@ -1,0 +1,28 @@
+{
+  "name": "projectopener",
+  "version": "1.0.0",
+  "description": "Open a project that has alias listed in a json",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/curiouskaran/projectOpener.git"
+  },
+  "keywords": [
+    "NodeJs"
+  ],
+  "author": "Karan Sharma",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/curiouskaran/projectOpener/issues"
+  },
+  "homepage": "https://github.com/curiouskaran/projectOpener#readme",
+  "dependencies": {
+    "chalk": "^4.0.0",
+    "figlet": "^1.4.0",
+    "inquirer": "^7.1.0",
+    "shelljs": "^0.8.4"
+  }
+}
