@@ -27,10 +27,10 @@ const runCommand = (answers) => {
 
     switch (COMMAND_NAME) {
         case "open":
-            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME]} && code .`);
+            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && code .`);
             break;
         case "runTest":
-            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME]} && gnome-terminal -x sh -c 'npm test' & disown`)
+            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && gnome-terminal -x sh -c 'npm test' & disown`)
         default:
             break;
     }
