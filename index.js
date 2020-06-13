@@ -1,10 +1,15 @@
 #!/usr/bin/env node
 
+//For asking interactive Questions
 const inquirer = require("inquirer");
+//For beautiful colors in CLI
 const chalk = require("chalk");
+//For making text Banners 
 const figlet = require("figlet");
-const data = require('./modules');
+//For executing native OS commands
 const { exec } = require("child_process");
+
+const data = require('./modules');
 
 const init = () => {
     console.log(
