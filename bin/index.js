@@ -14,7 +14,7 @@ const data = require('../modules');
 const init = () => {
     console.log(
       chalk.green(
-        figlet.textSync("WorkFlow", {
+        figlet.textSync("Jamison", {
           horizontalLayout: "default",
           verticalLayout: "default"
         })
