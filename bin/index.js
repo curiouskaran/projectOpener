@@ -9,12 +9,12 @@ const figlet = require("figlet");
 //For executing native OS commands
 const { exec } = require("child_process");
 
-const data = require('./modules');
+const data = require('../modules');
 
 const init = () => {
     console.log(
       chalk.green(
-        figlet.textSync("WorkFlow", {
+        figlet.textSync("Jamison", {
           horizontalLayout: "default",
           verticalLayout: "default"
         })
