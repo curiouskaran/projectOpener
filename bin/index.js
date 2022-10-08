@@ -8,6 +8,8 @@ const chalk = require("chalk");
 const figlet = require("figlet");
 //For executing native OS commands
 const { exec } = require("child_process");
+//Terminal commmands executor
+const { executeTerminalCommands } = require("../helpers/commands.js")
 
 const data = require('../modules');
 
@@ -32,10 +34,10 @@ const runCommand = (answers) => {
 
     switch (COMMAND_NAME) {
         case "open":
-            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && code .`);
+            executeTerminalCommands(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && code .`);
             break;
         case "runTest":
-            exec(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && gnome-terminal -x sh -c 'npm test' & disown`)
+            executeTerminalCommands(`cd ${data[PROJECT_TYPE][PROJECT_NAME].path} && gnome-terminal -x sh -c 'npm test' & disown`);
         default:
             break;
     }
