@@ -3,7 +3,7 @@
 const inquirer = require("inquirer");
 const chalk = require("chalk");
 const figlet = require("figlet");
-const { executeTerminalCommands } = require("../helpers/commands.js")
+const executeTerminalCommands = require("../helpers/commands.js").executeTerminalCommands
 require("dotenv").config({ path: __dirname + "/.env" });
 const data = require('../modules');
 

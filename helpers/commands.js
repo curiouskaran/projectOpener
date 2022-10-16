@@ -18,4 +18,27 @@ function executeTerminalCommands(command) {
 	});
 }
 
-module.exports = { executeTerminalCommands };
+function envObjectsParser(envObjects){
+	console.log("input", envObjects);
+	let parsedOptions = [];
+	if(envObjects.includes(",,")){
+		parsedOptions = envObjects.split(",,");
+		for (let i = 0; i < parsedOptions.length; i++) {
+			parsedOptions[i] = envObjectParser(parsedOptions[i]);
+		}
+	}else {
+		parsedOptions = envObjectParser(envObjects);
+		console.log("else op", parsedOptions);
+	}
+	return [parsedOptions];
+}
+
+function envObjectParser(envObject){
+	return JSON.parse(envObject);
+}
+
+// function collectDataTypes(){
+// 	return 
+// }
+
+module.exports = { executeTerminalCommands, envObjectsParser };

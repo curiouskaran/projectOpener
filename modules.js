@@ -1,4 +1,6 @@
 require("dotenv").config({ path: __dirname + "/.env" });
+const envObjectsParser = require("./helpers/commands").envObjectsParser;
+const previousAnswerDataTypes = {};
 // const initialOptions = process.env.INITIAL_COMMANDS.split(",");
 
 module.exports = {
@@ -8,11 +10,8 @@ module.exports = {
 			type: "list",
 			message: "what you want to do?",
 			choices: () => {
-				const options = process.env.InitialCommands.split(",,");
-				for (let i = 0; i < options.length; i++){
-					options[i] = JSON.parse(options[i]);
-				}
-				return options;
+				options = envObjectsParser(process.env.InitialCommands);
+				return envObjectsParser(process.env.InitialCommands);
 			},
 		},
 		{
