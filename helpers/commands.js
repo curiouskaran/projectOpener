@@ -26,19 +26,27 @@ function envObjectsParser(envObjects){
 		for (let i = 0; i < parsedOptions.length; i++) {
 			parsedOptions[i] = envObjectParser(parsedOptions[i]);
 		}
+		return parsedOptions;
 	}else {
 		parsedOptions = envObjectParser(envObjects);
-		console.log("else op", parsedOptions);
+		return [parsedOptions];
 	}
-	return [parsedOptions];
 }
 
 function envObjectParser(envObject){
 	return JSON.parse(envObject);
 }
 
-// function collectDataTypes(){
-// 	return 
-// }
+function collectDataTypes(options){
+	let optionsDataType = {}
+	if(options.length > 0){
+		for (let i = 0; i < options.length; i++) {
+			optionsDataType[options[i].value] = options[i].dataType;
+		}
+	}else if(options.length <= 0){
+		optionsDataType[options.value] = options.dataType;
+	}
+	return optionsDataType;
+}
 
-module.exports = { executeTerminalCommands, envObjectsParser };
+module.exports = { executeTerminalCommands, envObjectsParser, collectDataTypes };
